@@ -32,9 +32,6 @@ namespace filme.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("DataLancamento")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("Diretor")
                         .IsRequired()
                         .HasColumnType("text");
