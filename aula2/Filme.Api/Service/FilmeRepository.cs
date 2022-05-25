@@ -28,8 +28,8 @@ namespace filme.Service
         {
             // id += 1;
             // filme.Id = id;
-            filme.DataLancamento = DateTime.Now;
             _context.Filmes.Add(filme);
+            _context.SaveChanges();
         }
 
         public FilmeEntity atualizarFilme(FilmeEntity filme, int id)
@@ -41,7 +41,6 @@ namespace filme.Service
 
             filmeEncontrado.Diretor = filme.Diretor;
             filmeEncontrado.Titulo = filme.Titulo;
-            filmeEncontrado.DataLancamento = filme.DataLancamento;
 
             _context.SaveChanges();
             return filmeEncontrado;

@@ -12,8 +12,6 @@ namespace filme.Entity
         [Required]
         public int Id{get; set;}
         public string Titulo{get; set;}
-        public string Diretor{get; set;}
-        public DateTime DataLancamento{get; set;}
-        
+        public string Diretor{get; set;}        
     }
 }
