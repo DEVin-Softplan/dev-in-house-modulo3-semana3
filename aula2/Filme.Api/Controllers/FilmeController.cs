@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using filme.Entity;
-using filme.Service;
+using filme.Repository;
 
 namespace filme.Controllers
 {
@@ -15,23 +15,23 @@ namespace filme.Controllers
         private readonly ILogger<FilmeController> _logger;
         private IFilmeRepository _service;
 
-        public FilmeController(ILogger<FilmeController> logger, IFilmeRepository service)
+        public FilmeController( IFilmeRepository service)
         {
-            _logger = logger;
+            // _logger = logger;
             _service = service;
         }
 
         [HttpGet]
-        public IActionResult retornaFilmes(){
+        public List<FilmeEntity> retornaFilmes(){
             List<FilmeEntity> filmes = _service.listarFilmes();
-            return Ok(filmes);
+            return filmes;
         }
 
     // /filme/{id} => /filme/1
         [HttpGet("{id}")]
-        public IActionResult procuraFilme([FromRoute] int id){
+        public FilmeEntity procuraFilme([FromRoute] int id){
             FilmeEntity filmes = _service.encontrarFilme(id);
-            return Ok(filmes);
+            return filmes;
         }
 
         [HttpPost]

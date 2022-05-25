@@ -1,5 +1,5 @@
 using filme.Helper;
-using filme.Service;
+using filme.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

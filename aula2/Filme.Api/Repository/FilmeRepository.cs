@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using filme.Entity;
 using filme.Helper;
 
-namespace filme.Service
+namespace filme.Repository
 {
     public class FilmeRepository : IFilmeRepository
     {

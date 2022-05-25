@@ -1,6 +1,6 @@
 using filme.Entity;
 
-namespace filme.Service
+namespace filme.Repository
 {
     public interface IFilmeRepository 
     {
